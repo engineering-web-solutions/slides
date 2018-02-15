@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Grid Demo</title>
+</head>
+
+<body>
+	<div id="grid-parent">
+		<div id="grid-item-1" class="grid-item"><p>First item</p></div>
+		<div id="grid-item-2" class="grid-item"><p>Second item</p></div>
+		<div id="grid-item-3" class="grid-item"><p>Third item</p></div>
+		<div id="grid-item-4" class="grid-item"><p>Fourth item</p></div>
+		<div id="grid-item-5" class="grid-item"><p>Fifth item</p></div>
+		<div id="grid-item-6" class="grid-item"><p>Sixth item</p></div>
+	</div>
+
+	<style>
+		#grid-parent {
+			width: 100%;
+			display: grid;
+			 /* Defines the column widths
+				"fr" is a special unit meaning free space.
+				In this case, we have 1fr and 2fr for two of our columns.
+				In total we have 3fr units.
+				Therefore, the third column will use 1/3 of the remaining space
+					and the fourth column will use 2/3 of the remaining space
+				On your own, try 1fr 1fr or 2fr 2fr or 3fr 1fr and
+					understand how the fr units work.
+				 */
+			grid-template-columns: 50% 200px 1fr 2fr;
+			/* 
+				There are other css-grid properties to mess around, namely
+					align-items and justify-items deal with vertical and horizontal alignment
+			 */
+		}
+		.grid-item p {
+			color: #fff;
+			padding: 20px;
+		}
+		#grid-item-1 p { background: red; }
+		#grid-item-2 p { background: orange; }
+		#grid-item-3 p { background: purple; }
+		#grid-item-4 p { background: green; }
+		#grid-item-5 p { background: blue; }
+		#grid-item-6 p { background: pink; }
+	</style>
+</body>
+
+</html>
